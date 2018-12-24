@@ -1,0 +1,248 @@
+body {
+filter: brightness(100%) saturate(100%) contrast(100%);
+transition : -webkit-filter 2s
+}
+
+.leaflet-container.add-mode {
+  cursor: url('../images/marker-icon.png') 11 52, auto !important;
+}
+
+body,
+.leaflet-container {
+  background: #222;
+}
+
+.leaflet-control {
+  z-index: 99;
+  position: fixed;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+.leaflet-control-mouseposition {
+  color: white;
+}
+
+.marker-controls {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+
+.marker-controls.right {
+  left: unset;
+  right: 12px;
+}
+
+.control {
+	width: 30px;
+  height: 30px;
+  padding: 3px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+h1 {
+  font-size: 1000px;
+  position: absolute;
+  z-index: 99999;
+}
+
+.control.hide {
+  display: none;
+}
+
+.zoomout-control, .add-marker-control, .del-marker-control, 
+.clear-marker-control, .hide-marker-control, .night-mode-control {
+  margin-bottom: 6px;
+}
+
+.hide-marker-control {
+  margin-bottom: 20px;
+}
+
+.control img {
+  width:24px;
+  height:24px
+}
+
+.control.active {
+  background-color: #cacaca;
+  transition: background 0.3s;
+}
+
+.zoom {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
+}
+
+.zoomin-control {
+  box-shadow: none;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+.zoomout-control {
+  box-shadow: none;
+  border-top: 1px solid #ccc;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+
+.control:hover {
+  cursor: pointer;
+  background-color: #cacaca;
+}
+
+.night-mask {
+  opacity: 0;
+  z-index: 2;
+  top: 0;
+  pointer-events: none;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,5,70,0.5); 
+  transition: opacity 2s;
+}
+
+.night-mode {
+filter: brightness(80%) saturate(40%) contrast(110%);
+}
+
+.night-mode .night-mask {
+  opacity: 1;
+}
+
+/* .modal-container {
+  position: fixed;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal .modal-container {
+  display: flex;
+}
+
+.settings-modal {
+  padding: 15px;
+  display: none;
+  width: 400px;
+  background: white;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
+}
+
+.settings-mask {
+  display: none;
+  z-index: 3;
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0, 0.7); 
+}
+
+.modal .settings-mask, .modal .settings-modal {
+  display: block;
+} */
+
+.fog-mode .fog-container {
+  opacity: 1;
+  background: rgba(255,255,255,0.05)
+}
+
+.night-mode.fog-mode .fog-container {
+  background: initial;
+}
+
+.fog-container {
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.fog-layer {
+  position: absolute;
+  height: 100vh;
+  width: 300vw;
+}
+
+.fog-layer.first {
+  background: url("../images/fog1.png") repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 50s linear infinite;
+}
+
+.fog-layer.second {
+  background: url("../images/fog2.png") repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 30s linear infinite;
+}
+
+/* Custom Upload Button */
+label.upload-label input[type="file"] {
+  position:absolute;
+  top: -1000px;
+}
+
+/***** Example custom styling *****/
+.upload-label {
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 2px;
+  background: teal;
+  display: inline-block;
+  cursor: pointer;
+}
+.upload-label:hover {
+  background: rgb(0, 196, 196);
+}
+.upload-label:active {
+  background: rgb(0, 196, 196);
+}
+.upload-label :invalid + span {
+  color: white;
+}
+.upload-label :valid + span {
+  color: #4A4;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+    opacity: 0;
+  }
+}

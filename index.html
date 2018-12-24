@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Fantasy Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="marker-controls leaflet-control">
+      <div class="zoom">
+        <div class="control zoomin-control active" title="Zoom in">
+          <img src="images/plus.png" />
+        </div>
+        <div class="control zoomout-control" title="Zoom out">
+          <img src="images/minus.png" />
+        </div>
+      </div>
+
+      <div class="control add-marker-control" title="Add a marker">
+        <img src="images/add-marker.png" />
+      </div>
+      <div class="control del-marker-control" title="Delete a marker">
+        <img src="images/del-marker.png" />
+      </div>
+      <div class="control clear-marker-control" title="Remove all markers">
+        <img src="images/nuke.png" />
+      </div>
+      <div class="control hide-marker-control" title="Hide all markers">
+        <img src="images/map-marker-off.png" />
+      </div>
+      <div class="control night-mode-control" title="Toggle Night-mode">
+        <img src="images/night.png" />
+      </div>
+      <div class="control fog-mode-control" title="Toggle Fog-mode">
+        <img src="images/cloud.png" />
+      </div>
+    </div>
+
+    <div class="marker-controls leaflet-control right">
+      <div class="control settings-control" title="Settings">
+        <img src="images/settings.png" />
+      </div>
+    </div>
+
+    <div class="fog-container">
+      <div class="fog-layer first"></div>
+      <div class="fog-layer first"></div>
+      <div class="fog-layer second"></div>
+      <div class="fog-layer second"></div>
+    </div>
+
+    <!-- <div class="modal-container">
+      <div class="settings-modal">
+        <div><b>Hotkeys</b></div>
+        <div>Toggle controls display</div>
+        <div>h</div>
+        <hr />
+        <span>Party Marker</span> <input type="checkbox" />
+        <div><span>Default hide controls</span> <input type="checkbox" /></div>
+        <div>Default Zoom</div>
+        <input type="number" />
+        <div>Min Zoom</div>
+        <input type="number" />
+        <div>Max Zoom</div>
+        <input type="number" />
+        <hr />
+
+        <label class="upload-label">
+          <input id="map-upload" type="file" required />
+          <span>Upload New Map</span>
+        </label>
+      </div>
+    </div> -->
+
+    <div class="night-mask"></div>
+
+    <div class="settings-mask"></div>
+
+    <div id="map"></div>
+  </body>
+  <script src="scripts/main.js"></script>
+</html>
